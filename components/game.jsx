@@ -7,12 +7,13 @@ const containerStyle = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  alignContent: "center",
+  alignItems: "center",
   margin: "0 auto",
   width: "100%"
   };
 const buttonStyle = {
-  width: "100px"
+  width: "200px",
+  marginTop: "25px"
   };
 
 class Game extends React.Component {
@@ -24,10 +25,10 @@ class Game extends React.Component {
 
   }
 
-  startGame(height,width,bombs){
+  startGame(height,width,mines){
     this.setState(
       {
-        board: new Minesweeper.Board(height,width,bombs),
+        board: new Minesweeper.Board(height,width,mines),
         gameInSession: true
       }
     );

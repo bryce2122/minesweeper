@@ -10963,12 +10963,13 @@ var containerStyle = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  alignContent: "center",
+  alignItems: "center",
   margin: "0 auto",
   width: "100%"
 };
 var buttonStyle = {
-  width: "100px"
+  width: "200px",
+  marginTop: "25px"
 };
 
 var Game = function (_React$Component) {
@@ -10988,9 +10989,9 @@ var Game = function (_React$Component) {
 
   _createClass(Game, [{
     key: 'startGame',
-    value: function startGame(height, width, bombs) {
+    value: function startGame(height, width, mines) {
       this.setState({
-        board: new Minesweeper.Board(height, width, bombs),
+        board: new Minesweeper.Board(height, width, mines),
         gameInSession: true
       });
     }
@@ -11063,11 +11064,6 @@ var rowDivStyle = {
   height: '25px'
 };
 
-var containerDivStyle = {
-  margin: '0 auto',
-  width: '100%'
-};
-
 var Board = function (_React$Component) {
   _inherits(Board, _React$Component);
 
@@ -11083,7 +11079,7 @@ var Board = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: containerDivStyle },
+        null,
         this.props.board.grid.map(function (row, idx) {
           return _react2.default.createElement(
             'div',
@@ -11145,7 +11141,7 @@ var Form = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
 
-    _this.state = { height: "", width: "", bombs: "" };
+    _this.state = { height: "", width: "", mines: "" };
     _this.handleClick = _this.handleClick.bind(_this);
 
     return _this;
@@ -11157,8 +11153,8 @@ var Form = function (_React$Component) {
       e.preventDefault();
       var height = this.state.height;
       var width = this.state.width;
-      var bombs = this.state.bombs;
-      this.props.startGame(height, width, bombs);
+      var mines = this.state.mines;
+      this.props.startGame(height, width, mines);
     }
   }, {
     key: "update",
@@ -11194,9 +11190,9 @@ var Form = function (_React$Component) {
         }),
         _react2.default.createElement("input", {
           type: "text",
-          placeholder: "bombs",
+          placeholder: "mines",
           value: this.state.bombs,
-          onChange: this.update('bombs')
+          onChange: this.update('mines')
         }),
         _react2.default.createElement(
           "button",

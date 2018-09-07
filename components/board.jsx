@@ -5,10 +5,7 @@ const rowDivStyle = {
   height: '25px'
 };
 
-const containerDivStyle = {
-  margin: '0 auto',
-  width: '100%',
-};
+
 
 class Board extends React.Component {
 
@@ -19,7 +16,7 @@ class Board extends React.Component {
  render(){
 
    return(
-     <div style={containerDivStyle}>
+     <div>
        {this.props.board.grid.map((row,idx) => {
          return (
            <div key={idx} style={rowDivStyle}>

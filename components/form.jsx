@@ -11,7 +11,7 @@ class Form extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {height:"",width:"",bombs:""};
+    this.state = {height:"",width:"",mines:""};
     this.handleClick = this.handleClick.bind(this);
 
   }
@@ -20,8 +20,8 @@ class Form extends React.Component {
     e.preventDefault();
     const height = this.state.height;
     const width = this.state.width;
-    const bombs = this.state.bombs;
-    this.props.startGame(height,width,bombs);
+    const mines = this.state.mines;
+    this.props.startGame(height,width,mines);
   }
 
   update(property) {
@@ -54,9 +54,9 @@ class Form extends React.Component {
         />
         <input
           type="text"
-          placeholder="bombs"
+          placeholder="mines"
           value={this.state.bombs}
-          onChange={this.update('bombs')}
+          onChange={this.update('mines')}
         />
         <button onClick={this.handleClick}>Create Game</button>
       </form>
