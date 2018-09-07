@@ -6740,11 +6740,11 @@ var Board = exports.Board = function () {
     key: "makeMines",
     value: function makeMines() {
       var totalMines = 0;
-      while (totalMines < this.numberOfMines) {
+      var area = this.width * this.height;
+      while (totalMines < area && totalMines < this.numberOfMines) {
         var row = Math.round(Math.random() * (this.width - 1));
         var column = Math.round(Math.random() * (this.height - 1));
-        console.log("ROW", row);
-        console.log("column", column);
+
         var square = this.grid[row][column];
         if (!square.mined) {
           square.makeMine();

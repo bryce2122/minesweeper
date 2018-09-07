@@ -34,11 +34,11 @@ export class Board {
 
   makeMines() {
     let totalMines = 0;
-    while (totalMines < this.numberOfMines) {
+    const area = this.width * this.height;
+    while (totalMines < area && totalMines < this.numberOfMines) {
       const row = Math.round(Math.random() * (this.width - 1));
       const column = Math.round(Math.random() * (this.height - 1));
-      console.log("ROW",row);
-      console.log("column",column);
+
       let square = this.grid[row][column];
       if (!square.mined) {
         square.makeMine();
