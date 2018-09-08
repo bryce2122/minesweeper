@@ -25,7 +25,6 @@ class Form extends React.Component {
   }
 
   update(property) {
-
     return e => {
       const value = parseInt(e.target.value);
       if(!isNaN(value)){

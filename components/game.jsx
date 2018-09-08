@@ -11,6 +11,7 @@ const containerStyle = {
   margin: "0 auto",
   width: "100%"
   };
+
 const buttonStyle = {
   width: "200px",
   marginTop: "25px"
@@ -22,7 +23,6 @@ class Game extends React.Component {
     this.state = {board: "", gameInSession: false};
     this.startGame = this.startGame.bind(this);
     this.newGame = this.newGame.bind(this);
-
   }
 
   startGame(height,width,mines){
@@ -44,8 +44,7 @@ class Game extends React.Component {
         <div style={containerStyle}>
           <Board board={this.state.board}/>
           <button style={buttonStyle} onClick={this.newGame}>New Game</button>
-       </div>
-       :
+       </div> :
       <Form startGame={this.startGame}/>
     );
   }

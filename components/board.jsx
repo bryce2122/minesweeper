@@ -5,8 +5,6 @@ const rowDivStyle = {
   height: '25px'
 };
 
-
-
 class Board extends React.Component {
 
  constructor(props){
@@ -14,7 +12,6 @@ class Board extends React.Component {
  }
 
  render(){
-
    return(
      <div>
        {this.props.board.grid.map((row,idx) => {
